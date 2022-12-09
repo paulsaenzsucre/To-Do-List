@@ -99,8 +99,12 @@ form,
   width: 85%;
   line-height: 1.25rem;
   word-wrap: break-word;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
+.icon-trash,
 .icon-arrows-ccw,
 .icon-check,
 .icon-more-vert {
@@ -109,6 +113,11 @@ form,
   height: 1rem;
   width: 1rem;
   object-fit: contain;
+}
+
+.icon-trash {
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .icon-more-vert {
@@ -128,6 +137,10 @@ form,
   border: 0;
   outline: none;
   background-color: transparent;
+}
+
+.edit-task {
+  background: lightgoldenrodyellow;
 }
 
 .task-completed {
