@@ -79,12 +79,12 @@ In order to run this project you need:
 
 - You can download the **Zip** file on the GitHub repository, or clone the repository with:
 ```
-$git clone https://github.com/elafildecolor/MyPortfolio.git
+git clone https://github.com/elafildecolor/To-Do-List.git
 ```
 
 - Access the cloned directory with:
 ```
-$cd MyPortfolio
+cd MyPortfolio
 ```
 
 - Open it with your favorite code editor or with the live server
@@ -93,7 +93,7 @@ $cd MyPortfolio
 
 To install linters and other dependencies run:
 ```
-$npm install <dependency>
+npm install <dependency>
 ```
 
 ### Run tests
@@ -102,17 +102,17 @@ To analyze the source code in your local environment with linter follow these st
 
 - Looking for linter errors in HTML files run:
 ```
-$npx hint .
+npx hint .
 ```
 
 - Looking for linter errors in CSS | SASS files run:
 ```
-$npx stylelint "**/*.{css,scss}"
+npx stylelint "**/*.{css,scss}"
 ```
 
 - Looking for linter errors in JavaScript files run:
 ```
-$npx eslint .
+npx eslint .
 ```
 
 ## 👥 Authors <a name="authors"></a>
