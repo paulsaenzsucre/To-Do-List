@@ -19,11 +19,12 @@ class TaskPresenter {
     this.#task = task;
     this.#view = document.createElement('li');
     this.#view.setAttribute('class', 'todo');
-    this.#view.addEventListener('click', this.editState);
 
     this.#checkIcon = document.createElement('img');
+    this.#checkIcon.addEventListener('click', this.toggleCheckState);
     this.#label = document.createElement('label');
     this.#label.setAttribute('class', 'todo-label');
+    this.#label.addEventListener('click', this.editState);
     this.#input = document.createElement('input');
     this.#input.setAttribute('type', 'text');
     this.#input.setAttribute('class', 'todo-label');
@@ -82,6 +83,12 @@ class TaskPresenter {
     this.#moreIcon.setAttribute('class', 'icon-trash');
     this.#moreIcon.setAttribute('src', iconTrash);
     this.#moreIcon.addEventListener('click', this.removeFromDom);
+  }
+
+  toggleCheckState = () => {
+    this.#task.completed = !this.#task.completed;
+    this.#checkIcon.classList.toggle('task-completed');
+    this.#label.classList.toggle('completed');
   }
 }
 

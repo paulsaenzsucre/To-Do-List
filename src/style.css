@@ -148,6 +148,11 @@ form,
   border: none;
 }
 
+.completed {
+  text-decoration: line-through;
+  color: #9d9ea0;
+}
+
 .hidden {
   display: none;
 }
