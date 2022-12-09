@@ -84,7 +84,7 @@ git clone https://github.com/elafildecolor/To-Do-List.git
 
 - Access the cloned directory with:
 ```
-cd MyPortfolio
+cd To-Do-List
 ```
 
 - Open it with your favorite code editor or with the live server
