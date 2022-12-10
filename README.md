@@ -32,7 +32,7 @@
 
 This project is coded with standard languages like HTML, CSS and JavaScript.
 
-**To Do List** is a project that let users to manage a simple list of tasks. You can see a hard coded list of tasks.
+**To Do List** is a project that let users to manage a simple list of tasks.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -49,13 +49,17 @@ This project is coded with standard languages like HTML, CSS and JavaScript.
 
 ### Key Features <a name="key-features"></a>
 
-- **You can see a hard code list of tasks**
+- **You can see a task list.**
+- **You can add a new task.**
+- **You can remove a task.**
+- **You can remove all completed task at once.**
+- **You can see a count of completed tasks**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://elafildecolor.github.io/ToDoList/dist/index.html)
+- [Live Demo Link](https://elafildecolor.github.io/To-Do-List/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,10 +131,9 @@ npx eslint .
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add a new task**
-- [ ] **Remove a task**
-- [ ] **Remove all completed task at once**
-- [ ] **Edit a task from the list**
+- [ ] **Let more than one user**
+- [ ] **Let more than one list per user**
+- [ ] **Drag and drop to reorder task**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

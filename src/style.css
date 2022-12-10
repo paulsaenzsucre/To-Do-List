@@ -89,18 +89,32 @@ form,
   min-height: 2.5rem;
 }
 
+.todo {
+  cursor: move;
+}
+
 .list-stats {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.todo-label {
-  width: 85%;
-  line-height: 1.25rem;
-  word-wrap: break-word;
+.desc-cont {
+  width: 100%;
+  overflow: hidden;
 }
 
+.todo-label {
+  display: block;
+  width: 100%;
+  line-height: 1.25rem;
+  word-wrap: break-word;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.icon-trash,
 .icon-arrows-ccw,
 .icon-check,
 .icon-more-vert {
@@ -111,8 +125,9 @@ form,
   object-fit: contain;
 }
 
-.icon-more-vert {
-  cursor: move;
+.icon-trash {
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .icon-check {
@@ -130,9 +145,18 @@ form,
   background-color: transparent;
 }
 
+.edit-task {
+  background: lightgoldenrodyellow;
+}
+
 .task-completed {
   filter: invert(49%) sepia(60%) saturate(2240%) hue-rotate(189deg) brightness(91%) contrast(98%);
   border: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #9d9ea0;
 }
 
 .hidden {
