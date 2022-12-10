@@ -99,8 +99,14 @@ form,
   align-items: center;
 }
 
+.desc-cont {
+  width: 100%;
+  overflow: hidden;
+}
+
 .todo-label {
-  width: 85%;
+  display: block;
+  width: 100%;
   line-height: 1.25rem;
   word-wrap: break-word;
   background: transparent;

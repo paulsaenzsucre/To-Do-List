@@ -15,27 +15,38 @@ class TaskPresenter {
 
   #moreIcon;
 
+  #changeState;
+
   constructor(task) {
+    this.#changeState = new CustomEvent('changeState', {
+      detail: {},
+      bubbles: true,
+      cancelable: true,
+      composed: true,
+    });
     this.#task = task;
     this.#view = document.createElement('li');
     this.#view.setAttribute('class', 'todo');
     this.#view.setAttribute('draggable', true);
 
+    const div = document.createElement('div');
+    div.setAttribute('class', 'desc-cont');
     this.#checkIcon = document.createElement('img');
     this.#checkIcon.addEventListener('click', this.toggleCheckState);
     this.#label = document.createElement('label');
     this.#label.setAttribute('class', 'todo-label');
     this.#label.addEventListener('click', this.editState);
     this.#label.setAttribute('for', `task-${this.#task.index}`);
+    div.appendChild(this.#label);
     this.#input = document.createElement('input');
     this.#input.setAttribute('id', `task-${this.#task.index}`);
     this.#input.setAttribute('type', 'text');
     this.#input.setAttribute('class', 'todo-label');
+    div.appendChild(this.#input);
     this.#moreIcon = document.createElement('img');
 
     this.#view.appendChild(this.#checkIcon);
-    this.#view.appendChild(this.#label);
-    this.#view.appendChild(this.#input);
+    this.#view.appendChild(div);
     this.#view.appendChild(this.#moreIcon);
     this.showState();
   }
@@ -70,6 +81,7 @@ class TaskPresenter {
 
     this.#moreIcon.setAttribute('class', 'icon-more-vert');
     this.#moreIcon.setAttribute('src', iconMoreVert);
+    this.#moreIcon.removeEventListener('click', this.removeFromDom);
   }
 
   hiddenState = () => {
@@ -78,17 +90,19 @@ class TaskPresenter {
 
   editState = () => {
     this.#view.classList.add('edit-task');
-    this.#label.classList.add('hidden');
     this.#input.classList.remove('hidden');
+    this.#label.classList.add('hidden');
     this.#input.setAttribute('value', this.#task.description);
     this.#input.focus();
     this.#input.addEventListener('blur', () => {
       this.#task.description = this.#input.value;
+      this.#view.dispatchEvent(this.#changeState);
       this.showState();
     });
     this.#input.addEventListener('keypress', (evt) => {
       if (evt.key === 'Enter') {
         this.#task.description = this.#input.value;
+        this.#view.dispatchEvent(this.#changeState);
         this.showState();
       }
     });
@@ -101,13 +115,7 @@ class TaskPresenter {
     this.#task.completed = !this.#task.completed;
     this.#checkIcon.classList.toggle('task-completed');
     this.#label.classList.toggle('completed');
-    const changeState = new CustomEvent('changeState', {
-      detail: {},
-      bubbles: true,
-      cancelable: true,
-      composed: true,
-    });
-    this.#view.dispatchEvent(changeState);
+    this.#view.dispatchEvent(this.#changeState);
   }
 }
 
