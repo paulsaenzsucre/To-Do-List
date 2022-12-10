@@ -101,6 +101,13 @@ class TaskPresenter {
     this.#task.completed = !this.#task.completed;
     this.#checkIcon.classList.toggle('task-completed');
     this.#label.classList.toggle('completed');
+    const changeState = new CustomEvent('changeState', {
+      detail: {},
+      bubbles: true,
+      cancelable: true,
+      composed: true,
+    });
+    this.#view.dispatchEvent(changeState);
   }
 }
 
