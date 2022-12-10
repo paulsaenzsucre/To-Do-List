@@ -89,6 +89,10 @@ form,
   min-height: 2.5rem;
 }
 
+.todo {
+  cursor: move;
+}
+
 .list-stats {
   display: flex;
   flex-direction: column;
@@ -118,10 +122,6 @@ form,
 .icon-trash {
   height: 1.5rem;
   width: 1.5rem;
-}
-
-.icon-more-vert {
-  cursor: move;
 }
 
 .icon-check {

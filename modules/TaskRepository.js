@@ -30,6 +30,13 @@ class TaskRepository {
 
   allTasks = () => this.#tasks;
 
+  removeAllCompleted = () =>{
+    const newArray = this.#tasks.filter((element) => element.completed !== true);
+    this.#tasks = newArray;
+    this.#orderIndexs();
+    this.#storage.save(this.#tasks);
+  }
+
   #orderIndexs = () => {
     this.#tasks.sort((a, b) => a.index - b.index);
     for (let i = 0; i < this.#tasks.length; i += 1) {

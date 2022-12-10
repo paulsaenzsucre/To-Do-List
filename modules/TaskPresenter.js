@@ -19,13 +19,16 @@ class TaskPresenter {
     this.#task = task;
     this.#view = document.createElement('li');
     this.#view.setAttribute('class', 'todo');
+    this.#view.setAttribute('draggable', true);
 
     this.#checkIcon = document.createElement('img');
     this.#checkIcon.addEventListener('click', this.toggleCheckState);
     this.#label = document.createElement('label');
     this.#label.setAttribute('class', 'todo-label');
     this.#label.addEventListener('click', this.editState);
+    this.#label.setAttribute('for', `task-${this.#task.index}`);
     this.#input = document.createElement('input');
+    this.#input.setAttribute('id', `task-${this.#task.index}`);
     this.#input.setAttribute('type', 'text');
     this.#input.setAttribute('class', 'todo-label');
     this.#moreIcon = document.createElement('img');
@@ -39,7 +42,16 @@ class TaskPresenter {
 
   getView = () => this.#view;
 
+  getCheckedState = () => this.#task.completed;
+
   removeFromDom = () => {
+    const removeTask = new CustomEvent('removeTask', {
+      detail: this.#task,
+      bubbles: true,
+      cancelable: true,
+      composed: true,
+    });
+    this.#view.dispatchEvent(removeTask);
     this.#view.remove();
   }
 
