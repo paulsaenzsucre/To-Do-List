@@ -5,7 +5,7 @@ import TaskListHeaderPresenter from './TaskListHeaderPresenter.js';
 
 class ContainerPresenter {
   #taskRepository;
-  
+
   #parent;
 
   #header;
@@ -13,7 +13,7 @@ class ContainerPresenter {
   #form;
 
   #taskList;
-  
+
   #view;
 
   constructor(parent, taskRepository = null) {
@@ -53,7 +53,7 @@ class ContainerPresenter {
     this.#header.setCompletedCount(this.#taskRepository.getCompletedCount());
   }
 
-  #removeAllCompleted = () =>{
+  #removeAllCompleted = () => {
     this.#taskRepository.removeAllCompleted();
     this.#header.setCompletedCount(this.#taskRepository.getCompletedCount());
   }

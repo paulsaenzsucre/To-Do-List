@@ -2,9 +2,9 @@ import iconArrowsCcw from '../src/icon-arrows-ccw.svg';
 
 class TaskListHeaderPresenter {
   #completedCount;
-  
+
   #listStats;
-  
+
   #view;
 
   constructor() {
