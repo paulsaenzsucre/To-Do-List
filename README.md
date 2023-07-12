@@ -59,7 +59,7 @@ This project is coded with standard languages like HTML, CSS and JavaScript.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://elafildecolor.github.io/To-Do-List/)
+- [Live Demo Link](https://www.paulsaenzsucre.dev/To-Do-List/))
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
